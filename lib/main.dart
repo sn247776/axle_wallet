@@ -1,3 +1,4 @@
+import 'package:axle_wallet/wallet_funds.dart';
 import 'package:axle_wallet/wallet_login.dart';
 import 'package:axle_wallet/wallet_profile.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
             primary: const Color.fromRGBO(254, 177, 134, 1),
             brightness: Brightness.dark),
       ),
-      home: const ProfileScreen(),
+      home: const FundsScreen(),
     );
   }
 }
