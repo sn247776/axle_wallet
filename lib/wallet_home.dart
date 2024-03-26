@@ -1,10 +1,19 @@
+import 'dart:developer';
+
+import 'package:axle_wallet/models/user.dart';
+import 'package:axle_wallet/providers/user_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  static const String routeName = '/home';
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var userProvider = Provider.of<UserProvider>(context, listen: true);
+    var logger = Logger();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -27,17 +36,17 @@ class HomeScreen extends StatelessWidget {
               children: [
                 ClipOval(
                   child: Image.asset(
-                    '../assets/sagar.png',
+                    'assets/images/sagar.png',
                     height: 50,
                     width: 50,
                   ),
                 ),
                 SizedBox(width: 20),
-                const Column(
+                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "John Doe",
+                      userProvider.user.name,
                       style: TextStyle(fontSize: 18),
                     ),
                     Text(
@@ -99,6 +108,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(width: 6),
                 SizedBox(
                   child: Card(
+                    // color: ,
                     elevation: 10,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),

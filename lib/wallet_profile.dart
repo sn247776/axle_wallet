@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 ClipOval(
                   child: Image.asset(
-                    '../assets/sagar.png',
+                    'assets/images/sagar.png',
                     height: 100,
                     width: 100,
                   ),
