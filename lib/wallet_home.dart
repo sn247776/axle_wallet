@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/home';
+
   const HomeScreen({super.key});
 
   @override
@@ -42,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 20),
-                 Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -59,151 +60,327 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                SizedBox(
+                Container(
+                  width: 100, // Adjust the width as per your requirement
                   child: Card(
                     elevation: 10,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: Padding(
-                        padding: const EdgeInsets.all(24.0),
-                        child: Column(
-                          children: [
-                            const Text(
-                              "Current Balance",
-                              style: TextStyle(
-                                fontSize: 13,
-                              ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 5),
+                          Text(
+                            "Today’s Earnings",
+                            style: TextStyle(
+                              fontSize: 10,
                             ),
-                            const SizedBox(height: 16),
-                            RichText(
-                              text: const TextSpan(
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: 'USDT  ',
-                                    style: TextStyle(
-                                      color: Color.fromRGBO(156, 177, 209, 1),
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: '110.00',
-                                  ),
-                                ],
-                              ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '0.56',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 255, 255, 255),
                             ),
-                          ],
-                        ),
+                          ),
+                          SizedBox(height: 5),
+                        ],
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(width: 6),
-                SizedBox(
+                Container(
+                  width: 100, // Adjust the width as per your requirement
                   child: Card(
-                    // color: ,
                     elevation: 10,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: Padding(
-                        padding: const EdgeInsets.all(24.0),
-                        child: Column(
-                          children: [
-                            const Text(
-                              "Personal Gains",
-                              style: TextStyle(
-                                fontSize: 13,
-                              ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 5),
+                          Text(
+                            "Balance",
+                            style: TextStyle(
+                              fontSize: 10,
                             ),
-                            const SizedBox(height: 16),
-                            RichText(
-                              text: const TextSpan(
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: '0',
-                                  ),
-                                ],
-                              ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '0.76',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 255, 255, 255),
                             ),
-                          ],
-                        ),
+                          ),
+                          SizedBox(height: 5),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 100, // Adjust the width as per your requirement
+                  child: Card(
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 5),
+                          Text(
+                            "Frozen Amount",
+                            style: TextStyle(
+                              fontSize: 10,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '452',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                        ],
                       ),
                     ),
                   ),
                 ),
               ],
             ),
+
+            const SizedBox(height: 16),
+
+            /// Recharge Balance and Withdraw Now Buttons
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(
+                  width: 150,
+                  height: 40,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      // Add your withdraw logic here
+                    },
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(
+                        color: Theme.of(context).colorScheme.primary,
+                        width: 2,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      'Recharge Balance',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 16),
+                SizedBox(
+                  width: 150,
+                  height: 40,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Add your submit funds logic here
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      'Withdraw Now',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            /// Term Earnings and Film Investment
+            const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
               child: Card(
                 elevation: 10,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(5),
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: TextStyle(fontSize: 11),
-                            children: [
-                              const TextSpan(
-                                text: "Withdraw able Amount:  ",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              TextSpan(
-                                text: "75.00",
-                                style: TextStyle(
-                                  color: Theme.of(context).colorScheme.primary,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            // Add your withdraw logic here
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                Theme.of(context).colorScheme.primary,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                          child: const Text(
-                            'Withdraw',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                child: const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Team Earnings",
+                        style: TextStyle(fontSize: 15, color: Colors.white70),
+                      ),
+                      Icon(Icons.arrow_right),
+                    ],
                   ),
                 ),
               ),
+            ),
+
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              child: Card(
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Film Investment",
+                        style: TextStyle(fontSize: 15, color: Colors.white70),
+                      ),
+                      Icon(Icons.arrow_right),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+            /// Icons
+            const SizedBox(height: 16),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white10,
+                            borderRadius: BorderRadius.circular(100)),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.book),
+                        )),
+                    const SizedBox(height: 2),
+                   const Text("Office Guide", style: TextStyle(
+                      fontSize: 10
+                    ),)
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white10,
+                            borderRadius: BorderRadius.circular(100)),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.work),
+                        )),
+                    const SizedBox(height: 2),
+                    const Text("Agreement", style: TextStyle(
+                        fontSize: 10
+                    ),)
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white10,
+                            borderRadius: BorderRadius.circular(100)),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.share),
+                        )),
+                    const SizedBox(height: 2),
+                    const Text("Share Code", style: TextStyle(
+                        fontSize: 10
+                    ),)
+                  ],
+                )
+              ],
+            ),
+
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white10,
+                            borderRadius: BorderRadius.circular(100)),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.account_balance),
+                        )),
+                    const SizedBox(height: 2),
+                    const Text("Account Record", style: TextStyle(
+                        fontSize: 10
+                    ),)
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white10,
+                            borderRadius: BorderRadius.circular(100)),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.account_balance_wallet),
+                        )),
+                    const SizedBox(height: 2),
+                    const Text("E-Wallet", style: TextStyle(
+                        fontSize: 10
+                    ),)
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white10,
+                            borderRadius: BorderRadius.circular(100)),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.workspace_premium),
+                        )),
+                    const SizedBox(height: 2),
+                    const Text("Membership level", style: TextStyle(
+                        fontSize: 10
+                    ),)
+                  ],
+                )
+              ],
             ),
           ],
         ),
