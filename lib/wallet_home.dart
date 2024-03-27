@@ -135,7 +135,7 @@ class HomeScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Padding(
+                    child: const Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: Column(
                         children: [
